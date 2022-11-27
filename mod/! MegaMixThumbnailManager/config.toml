@@ -1,0 +1,8 @@
+enabled = true
+name = "Mega Mix Thumbnail Manager"
+description = "Compile in-game song thumbnails so that none of them will look broken."
+version = "0.1.2"
+date = "27.11.2022"
+author = "joexyz"
+dll = ["MegaMixThumbnailManager.dll"]
+include = ["."]

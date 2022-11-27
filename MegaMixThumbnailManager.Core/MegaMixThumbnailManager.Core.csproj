@@ -107,4 +107,7 @@
   <Target Name="DllExportRPkgDynamicImport" BeforeTargets="PostBuildEvent" DependsOnTargets="GetFrameworkPaths" Condition="'$(DllExportModImported)' != 'true' And '$(DllExportRPkgDyn)' != 'false'">
     <MSBuild BuildInParallel="true" UseResultsCache="true" Projects="$(MSBuildProjectFullPath)" Properties="DllExportRPkgDyn=true" Targets="Build" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y "$(SolutionDir)publish\MegaMixThumbnailManager.Core.dll" "$(SolutionDir)mod\! MegaMixThumbnailManager"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
