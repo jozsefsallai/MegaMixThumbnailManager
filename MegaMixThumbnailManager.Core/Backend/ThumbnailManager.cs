@@ -18,6 +18,8 @@ namespace MegaMixThumbnailManager.Core.Backend
         private static readonly uint SPRITE_DATABASE_ID = 4527;
         private static readonly string SPRITE_DATABASE_NAME = "SPR_SEL_PVTMB";
         private static readonly uint DATABASE_ID_OFFSET = 58027;
+        private static readonly uint DATABASE_ID_MAX_SAFE_OFFSET = 58281;
+        private static readonly uint DATABASE_ID_LARGE_OFFSET = 21001100;
 
         private uint globalTextureIndex = 0;
 
@@ -201,26 +203,43 @@ namespace MegaMixThumbnailManager.Core.Backend
 
             uint id = DATABASE_ID_OFFSET;
 
-            ushort spriteIndex = 0;
-
-            foreach (Sprite sprite in spriteSet.Sprites)
-            {
-                SpriteInfo spriteInfo = new SpriteInfo();
-                spriteInfo.Id = id++;
-                spriteInfo.Name = $"{SPRITE_DATABASE_NAME}_{sprite.Name}";
-                spriteInfo.Index = spriteIndex++;
-                spriteSetInfo.Sprites.Add(spriteInfo);
-            }
-
             ushort textureIndex = 0;
 
             foreach (Texture texture in spriteSet.TextureSet.Textures)
             {
                 SpriteTextureInfo textureInfo = new SpriteTextureInfo();
-                textureInfo.Id = id++;
+                textureInfo.Id = id;
                 textureInfo.Name = $"SPRTEX_SEL_PVTMB_{texture.Name}";
                 textureInfo.Index = textureIndex++;
                 spriteSetInfo.Textures.Add(textureInfo);
+
+                if (id == DATABASE_ID_MAX_SAFE_OFFSET)
+                {
+                    id = DATABASE_ID_LARGE_OFFSET;
+                }
+                else
+                {
+                    id++;
+                }
+            }
+
+            ushort spriteIndex = 0;
+
+            foreach (Sprite sprite in spriteSet.Sprites)
+            {
+                SpriteInfo spriteInfo = new SpriteInfo();
+                spriteInfo.Id = id;
+                spriteInfo.Name = $"{SPRITE_DATABASE_NAME}_{sprite.Name}";
+                spriteInfo.Index = spriteIndex++;
+                spriteSetInfo.Sprites.Add(spriteInfo);
+
+                if (id == DATABASE_ID_MAX_SAFE_OFFSET)
+                {
+                    id = DATABASE_ID_LARGE_OFFSET;
+                } else
+                {
+                    id++;
+                }
             }
 
             database.SpriteSets.Add(spriteSetInfo);

@@ -37,9 +37,9 @@ internal static class ModLoader
 
         List<string> finalMods = new List<string>();
 
-        for (int i = mods.Count - 1; i >= 0; i--)
+        foreach (string mod in mods)
         {
-            finalMods.Add(Path.Combine(basePath, mods[i]));
+            finalMods.Add(Path.Combine(basePath, mod));
         }
 
         return finalMods.ToArray();
@@ -47,10 +47,7 @@ internal static class ModLoader
 
     private static string[] GetModsAlphanumeric(string basePath)
     {
-        Logger.Log("Processing mods in reverse alphabetical order.");
-
-        var directories = Directory.GetDirectories(basePath);
-        Array.Reverse(directories);
-        return directories;
+        Logger.Log("Processing mods in alphanumeric order.");
+        return Directory.GetDirectories(basePath);
     }
 }
