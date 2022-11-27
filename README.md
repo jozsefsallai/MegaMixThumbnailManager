@@ -23,6 +23,7 @@ Then just run the game as usual. The mod will do its magic when the game starts.
 - [DllExport][dllexport-url]
 - [PDRPC][pdrpc-url] - for pointing me into the right directions regarding
   interoperability between C# and C++.
+- BunBun for testing.
 
 ## License
 

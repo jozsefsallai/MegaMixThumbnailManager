@@ -32,6 +32,12 @@ namespace MegaMixThumbnailManager.Core.Backend
                 return;
             }
 
+            if (!IsModEnabled(modPath))
+            {
+                // Mod is not enabled, skip it.
+                return;
+            }
+
             string pvtmbFarcPath = Path.Combine(modPath, "rom/2d", FARC_NAME);
 
             if (!File.Exists(pvtmbFarcPath)) {
@@ -109,6 +115,26 @@ namespace MegaMixThumbnailManager.Core.Backend
         private bool IsSpriteProcessed(string name)
         {
             return globalSprites.FindIndex(sprite => sprite.Name == name) >= 0;
+        }
+
+        private bool IsModEnabled(string modPath)
+        {
+            try
+            {
+                var config = ConfigParser.GetModConfig(modPath);
+                
+                if (!config.HasKey("enabled"))
+                {
+                    return false;
+                }
+
+                return config["enabled"].AsBoolean;
+            } catch (Exception)
+            {
+                // weird
+                return false;
+            }
+            
         }
 
         public void Save()

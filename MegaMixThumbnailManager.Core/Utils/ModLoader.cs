@@ -9,7 +9,7 @@ internal static class ModLoader
         try
         {
             string gamePath = Path.Combine(basePath, "..");
-            var settings = ConfigParser.Get(gamePath);
+            var settings = ConfigParser.GetGlobalConfig(gamePath);
 
             if (settings.HasKey("priority"))
             {
