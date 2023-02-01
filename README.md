@@ -5,6 +5,8 @@ Mega Mix+. This mod will generate a unified thumbnail database for all songs
 from the base game and your installed mods, so none of your songs will have
 broken thumbnails (hopefully).
 
+**[Download from GameBanana][gb-url]** | **[Download from GitHub][gh-download-url]**
+
 ## Usage
 
 Put the mod in your `mods` folder and depending on your setup, either:
@@ -14,6 +16,39 @@ Put the mod in your `mods` folder and depending on your setup, either:
 - Make sure it's the first mod in your priority line, if you use it.
 
 Then just run the game as usual. The mod will do its magic when the game starts.
+
+## Bug Reporting
+
+If you encounter any bugs, please report them on the [GitHub issue tracker][issues-url]
+or in a comment on the [GameBanana page][gb-url].
+
+Getting my attention on Discord is possible but it makes it harder to keep track
+of the issues, so please use the methods described above, if possible.
+
+## Building
+
+To build this mod from source, you will need Visual Studio (preferably 2019) and
+the C# and C++ development toolchains.
+
+**1. Clone the repository:**
+
+```sh
+git clone git@github.com:jozsefsallai/MegaMixThumbnailManager.git
+cd MegaMixThumbnailManager
+```
+
+**2. Clone MikuMikuLibrary into the `packages` directory:**
+
+```sh
+cd packages
+git clone git@github.com:blueskythlikesclouds/MikuMikuLibrary.git
+```
+
+**3. Open the MikuMikuLibrary solution in Visual Studio and build it.**
+
+**4. Open the MegaMixThumbnailManager solution in Visual Studio and build it.**
+
+Make sure you're selecting the **x64** target and the **Release** configuration.
 
 ## Credits
 
@@ -29,6 +64,9 @@ Then just run the game as usual. The mod will do its magic when the game starts.
 
 MIT. See the LICENSE file for more details.
 
+[gb-url]: https://gamebanana.com/mods/414252
+[gh-download-url]: https://github.com/jozsefsallai/MegaMixThumbnailManager/releases/latest
+[issues-url]: https://github.com/jozsefsallai/MegaMixThumbnailManager/issues
 [divamodloader-url]: https://github.com/blueskythlikesclouds/DivaModLoader
 [mikumikulibrary-url]: https://github.com/blueskythlikesclouds/MikuMikuLibrary
 [newtonsoft-url]: https://github.com/JamesNK/Newtonsoft.Json
