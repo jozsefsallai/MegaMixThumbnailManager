@@ -7,8 +7,8 @@
     <ProjectGuid>{A6777D91-9D2C-4328-8757-0E190E09426A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MegaMixThumbnailManager.Core</RootNamespace>
-    <AssemblyName>MegaMixThumbnailManager.Core</AssemblyName>
+    <RootNamespace>MegaMixThumbnailManager</RootNamespace>
+    <AssemblyName>MegaMixThumbnailManager</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,24 +31,6 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-  <PropertyGroup>
-    <DllExportIdent>4A054055-2421-4A35-B081-7F56157BFC8D</DllExportIdent>
-    <DllExportMetaLibName>DllExport.dll</DllExportMetaLibName>
-    <DllExportNamespace>MegaMixThumbnailManager.Core</DllExportNamespace>
-    <DllExportDDNSCecil>true</DllExportDDNSCecil>
-    <PlatformTarget>x64</PlatformTarget>
-    <DllExportOrdinalsBase>1</DllExportOrdinalsBase>
-    <DllExportGenExpLib>false</DllExportGenExpLib>
-    <DllExportOurILAsm>false</DllExportOurILAsm>
-    <DllExportSysObjRebase>false</DllExportSysObjRebase>
-    <DllExportLeaveIntermediateFiles>false</DllExportLeaveIntermediateFiles>
-    <DllExportTimeout>30000</DllExportTimeout>
-    <DllExportPeCheck>2</DllExportPeCheck>
-    <DllExportPatches>3</DllExportPatches>
-    <DllExportPreProcType>1</DllExportPreProcType>
-    <DllExportILMerge>/attr:MegaMixThumbnailManager.Core.dll Newtonsoft.Json.dll Tommy.dll MikuMikuLibrary.dll</DllExportILMerge>
-    <DllExportPostProcType>0</DllExportPostProcType>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -97,9 +79,30 @@
     <None Include="Resources\no_thumbnail.farc" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>for %25%25f in ("$(SolutionDir)publish\MegaMixThumbnailManager.dll", "$(SolutionDir)publish\AssimpNet.dll") do xcopy /y %25%25f "$(SolutionDir)mod\! MegaMixThumbnailManager"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DllExportIdent>4A054055-2421-4A35-B081-7F56157BFC8D</DllExportIdent>
+    <DllExportMetaLibName>DllExport.dll</DllExportMetaLibName>
+    <DllExportNamespace>MegaMixThumbnailManager</DllExportNamespace>
+    <DllExportDDNSCecil>true</DllExportDDNSCecil>
+    <PlatformTarget>x64</PlatformTarget>
+    <DllExportOrdinalsBase>1</DllExportOrdinalsBase>
+    <DllExportGenExpLib>false</DllExportGenExpLib>
+    <DllExportOurILAsm>false</DllExportOurILAsm>
+    <DllExportSysObjRebase>false</DllExportSysObjRebase>
+    <DllExportLeaveIntermediateFiles>false</DllExportLeaveIntermediateFiles>
+    <DllExportTimeout>30000</DllExportTimeout>
+    <DllExportPeCheck>2</DllExportPeCheck>
+    <DllExportPatches>3</DllExportPatches>
+    <DllExportPreProcType>1</DllExportPreProcType>
+    <DllExportILMerge>/attr:MegaMixThumbnailManager.dll Newtonsoft.Json.dll Tommy.dll MikuMikuLibrary.dll</DllExportILMerge>
+    <DllExportPostProcType>0</DllExportPostProcType>
+  </PropertyGroup>
   <Target Name="DllExportPreProc" BeforeTargets="DllExportMod" Label="8337224c9ad9e356:PreProc">
     <Copy SourceFiles="$(DllExportMetaLibFullPath)" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
-    <Exec Command="$(ILMergeConsolePath) /attr:MegaMixThumbnailManager.Core.dll Newtonsoft.Json.dll Tommy.dll MikuMikuLibrary.dll $(TargetFileName) /out:$(TargetFileName) /ndebug" WorkingDirectory="$(TargetDir)" ContinueOnError="false" />
+    <Exec Command="$(ILMergeConsolePath) /attr:MegaMixThumbnailManager.dll Newtonsoft.Json.dll Tommy.dll MikuMikuLibrary.dll $(TargetFileName) /out:$(TargetFileName) /ndebug" WorkingDirectory="$(TargetDir)" ContinueOnError="false" />
     <Delete Files="$(TargetDir)$(DllExportMetaLibName)" ContinueOnError="true" />
   </Target>
   <ImportGroup Label=".NET DllExport">
@@ -122,7 +125,4 @@
   <Target Name="DllExportRPkgDynamicImport" BeforeTargets="PostBuildEvent" DependsOnTargets="GetFrameworkPaths" Condition="'$(DllExportModImported)' != 'true' And '$(DllExportRPkgDyn)' != 'false'">
     <MSBuild BuildInParallel="true" UseResultsCache="true" Projects="$(MSBuildProjectFullPath)" Properties="DllExportRPkgDyn=true" Targets="Build" />
   </Target>
-  <PropertyGroup>
-    <PostBuildEvent>for %25%25f in ("$(SolutionDir)publish\MegaMixThumbnailManager.Core.dll", "$(SolutionDir)publish\AssimpNet.dll") do xcopy /y %25%25f "$(SolutionDir)mod\! MegaMixThumbnailManager"</PostBuildEvent>
-  </PropertyGroup>
 </Project>

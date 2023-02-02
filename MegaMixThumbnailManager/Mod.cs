@@ -1,14 +1,14 @@
 ﻿using System;
 using System.IO;
 
-using MegaMixThumbnailManager.Core.Backend;
+using MegaMixThumbnailManager.Backend;
 
-namespace MegaMixThumbnailManager.Core
+namespace MegaMixThumbnailManager
 {
     public class Mod
     {
         [DllExport]
-        public static void OnInit()
+        public static void Init()
         {
             Logger.Log("Collecting PV thumbnails.");
 
@@ -50,7 +50,7 @@ namespace MegaMixThumbnailManager.Core
         }
 
         [DllExport]
-        public static void OnDispose()
+        public static void Dispose()
         {
             Logger.Log("Mega Mix Thumbnail Manager disposed successfully.");
         }

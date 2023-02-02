@@ -9,7 +9,7 @@ using MikuMikuLibrary.IO;
 using MikuMikuLibrary.Sprites;
 using MikuMikuLibrary.Textures;
 
-namespace MegaMixThumbnailManager.Core.Backend
+namespace MegaMixThumbnailManager.Backend
 {
     class ThumbnailManager
     {

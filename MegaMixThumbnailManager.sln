@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaMixThumbnailManager.Core", "MegaMixThumbnailManager.Core\MegaMixThumbnailManager.Core.csproj", "{A6777D91-9D2C-4328-8757-0E190E09426A}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MegaMixThumbnailManager", "MegaMixThumbnailManager\MegaMixThumbnailManager.vcxproj", "{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaMixThumbnailManager", "MegaMixThumbnailManager\MegaMixThumbnailManager.csproj", "{A6777D91-9D2C-4328-8757-0E190E09426A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MikuMikuLibrary", "packages\MikuMikuLibrary\MikuMikuLibrary\MikuMikuLibrary.csproj", "{9C7171CA-7379-458F-A9CA-293BBF2C74DC}"
 EndProject
@@ -31,17 +29,6 @@ Global
 		{A6777D91-9D2C-4328-8757-0E190E09426A}.Release|x64.Build.0 = Release|Any CPU
 		{A6777D91-9D2C-4328-8757-0E190E09426A}.Release|x86.ActiveCfg = Release|Any CPU
 		{A6777D91-9D2C-4328-8757-0E190E09426A}.Release|x86.Build.0 = Release|Any CPU
-		{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}.Debug|x64.ActiveCfg = Debug|x64
-		{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}.Debug|x64.Build.0 = Debug|x64
-		{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}.Debug|x86.ActiveCfg = Debug|Win32
-		{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}.Debug|x86.Build.0 = Debug|Win32
-		{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}.Release|Any CPU.ActiveCfg = Release|x64
-		{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}.Release|Any CPU.Build.0 = Release|x64
-		{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}.Release|x64.ActiveCfg = Release|x64
-		{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}.Release|x64.Build.0 = Release|x64
-		{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}.Release|x86.ActiveCfg = Release|Win32
-		{B70B76CF-9349-4CB1-8F2F-5BC4C2582A17}.Release|x86.Build.0 = Release|Win32
 		{9C7171CA-7379-458F-A9CA-293BBF2C74DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9C7171CA-7379-458F-A9CA-293BBF2C74DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C7171CA-7379-458F-A9CA-293BBF2C74DC}.Debug|x64.ActiveCfg = Debug|Any CPU

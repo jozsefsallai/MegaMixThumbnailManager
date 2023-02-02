@@ -28,7 +28,7 @@ of the issues, so please use the methods described above, if possible.
 ## Building
 
 To build this mod from source, you will need Visual Studio (preferably 2019) and
-the C# and C++ development toolchains.
+the C# development toolchains.
 
 **1. Clone the repository:**
 
@@ -56,8 +56,6 @@ Make sure you're selecting the **x64** target and the **Release** configuration.
 - [MikuMikuLibrary][mikumikulibrary-url]
 - [Newtonsoft.Json][newtonsoft-url]
 - [DllExport][dllexport-url]
-- [PDRPC][pdrpc-url] - for pointing me into the right directions regarding
-  interoperability between C# and C++.
 - BunBun for testing.
 
 ## License
