@@ -400,3 +400,5 @@ FodyWeavers.xsd
 
 mod/**/*.dll
 *.zip
+
+/DllExport.bat
