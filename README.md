@@ -37,23 +37,24 @@ git clone git@github.com:jozsefsallai/MegaMixThumbnailManager.git
 cd MegaMixThumbnailManager
 ```
 
-**2. Clone MikuMikuLibrary into the `packages` directory:**
+**2. Download [DllExport][dllexport-bat-url] and place it into the root of the
+repo.**
+
+_The DllExport batch file is not included in this repository to avoid cluttering
+it._
+
+**3. Clone MikuMikuLibrary into the `packages` directory:**
 
 ```sh
 cd packages
 git clone git@github.com:blueskythlikesclouds/MikuMikuLibrary.git
 ```
 
-**3. Open the MikuMikuLibrary solution in Visual Studio and build it.**
+**4. Open the MikuMikuLibrary solution in Visual Studio and build it.**
 
-**4. Open the MegaMixThumbnailManager solution in Visual Studio and build it.**
+**5. Open the MegaMixThumbnailManager solution in Visual Studio and build it.**
 
 Make sure you're selecting the **x64** target and the **Release** configuration.
-
-If you want to update the `DllExport` configuration, you can do so by editing
-the C# project file or downloading the [configuration GUI][dllexport-gui-url],
-placing it into the root of the repo, and running it. The batch file is not
-included in this repository to avoid cluttering it.
 
 ## Credits
 
@@ -70,7 +71,7 @@ MIT. See the LICENSE file for more details.
 [gb-url]: https://gamebanana.com/mods/414252
 [gh-download-url]: https://github.com/jozsefsallai/MegaMixThumbnailManager/releases/latest
 [issues-url]: https://github.com/jozsefsallai/MegaMixThumbnailManager/issues
-[dllexport-gui-url]: https://3f.github.io/DllExport/releases/latest/manager/
+[dllexport-bat-url]: https://3f.github.io/DllExport/releases/latest/manager/
 [divamodloader-url]: https://github.com/blueskythlikesclouds/DivaModLoader
 [mikumikulibrary-url]: https://github.com/blueskythlikesclouds/MikuMikuLibrary
 [newtonsoft-url]: https://github.com/JamesNK/Newtonsoft.Json
